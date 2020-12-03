@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+
+int main(int argc, char *argv[]) {
+   char input[20] = {0};
+   system("shutdown -s -t 60");
+again:    
+   printf("您的电脑将在一分钟后关闭,请输入“我是猪”,来取消关机\n");
+   scanf("%s",input);
+   if(strcmp(input,"我是猪")==0) {
+   	system("shutdown -a");
+   }
+   else {
+   	goto again;
+   }
+	return 0;
+}  
