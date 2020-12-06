@@ -1,0 +1,67 @@
+#include <stdio.h>
+double c;
+int main()
+{   
+    int m=0;
+	double fun(double x,double y,double(*p)(double,double));
+	double add(double x,double y);
+	double minus(double x,double y);
+	double chen(double x,double y);
+	double chu(double x,double y);
+	double a,b;
+	char n;
+again:
+	scanf("%lf%c%lf",&a,&n,&b);
+	if(n=='+') fun(a,b,add);
+	else if(n=='-') fun(a,b,minus);
+	else if(n=='*') fun(a,b,chen);
+	else if(n=='/') fun(a,b,chu);
+	do {
+	printf("是否继续使用\n");
+	printf("***1.继续  0.退出***\n");
+	fflush(stdin);
+    printf("请输入->");
+	scanf("%d",&m);
+	switch(m) {
+		case 1:	goto again;
+		        break;
+		case 0: printf("感谢使用");
+		        break;
+		default:printf("输入错误，请重新输入\n");
+		        break; 
+		}
+	   }while(m);
+ return 0;
+}
+
+double fun(double x,double y,double(*p)(double,double))
+{
+	double k;
+	k=(*p)(x,y);
+	printf("sum=%.4lf\n",c);
+	return 0;
+}
+
+double add(double x ,double y)
+{
+	c = x + y;
+	return c;
+}
+
+double minus(double x ,double y)
+{
+	c=x - y;
+	return c;
+}
+
+double chen(double x ,double y)
+{
+	c=x * y;
+	return c;
+}
+
+double chu(double x ,double y)
+{
+	c = x / y;
+	return c;
+}
