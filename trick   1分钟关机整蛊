@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main() {
+ char a[20]={0};
+ system("shutdown -s -t 60");
+ printf("您的电脑将在1分钟后自动关机，请输入“我是猪”取消关机\n");
+ again:
+ scanf("%s",&a);
+ if(strcmp(a,"我是猪")==0)
+   system("shutdown -a");
+ else{
+ 	   printf("输入错误，建议乖乖输入，留给你的时间不多了\n");
+ 	   goto again; 
+ }
+     return 0;
+}
