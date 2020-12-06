@@ -1,0 +1,18 @@
+#include <stdio.h>
+double max(double a,double b);
+int main()
+{   double y,a,b;
+    printf("请输入两个数\n");
+    scanf("%lf%lf",&a,&b);
+	y = max(a,b);
+	printf("%.2lf",y);
+	return 0;
+}
+double max(double a,double b) {
+	double x;
+	if(a>=b)
+	x=a;
+	else
+	x=b;
+	return x;
+}
