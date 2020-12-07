@@ -1,0 +1,14 @@
+#include<stdio.h>
+int final(int n)
+{     if(n<=1)
+          return 1;
+      else
+          return n*final(n-1);
+}
+int main() {
+	int m,x;
+    scanf("%d",&m);
+    x=final(m);
+    printf("%d",x);
+	return 0; 
+}
