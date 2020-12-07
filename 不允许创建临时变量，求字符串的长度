@@ -1,0 +1,14 @@
+#include<stdio.h>
+int my_strlen(char* str)
+{    if(*str !='\0')
+	 return 1+my_strlen(str+1);
+	 else
+	 return 0;
+}
+int main() {
+	int m;
+	char a[]="we are one";
+    m=my_strlen(a);
+    printf("%d",m);
+	return 0; 
+}
