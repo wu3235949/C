@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+int i=1;
+int x='X',y='Y',z='Z';
+void move(char x,int n,char z){
+     printf("%2d. Move disk %d from %c to %c\n",i++,n,x,z); 
+}
+void hanoi(int n,char x,char y ,char z){
+ if(n==1)
+ move(x,1,z);
+ else
+ {
+  hanoi(n-1,x,z,y);
+  move(x,n,z);
+  hanoi(n-1,y,x,z);
+ }
+}
+int main  (){
+ int n;
+ while(scanf("%d",&n)!=EOF){
+  hanoi(n,x,y,z);
+  printf("\n");
+  i=1;
+ }
+ 
+}
