@@ -22,3 +22,34 @@ int main(int argc, char** argv) {
    }
 	return 0;
 }
+//-----------------------------------------------------------function
+#include<stdio.h>
+int search(int arr[],int a,int sz);
+int main()
+{
+	int sz,a,ret;
+	int arr[]={1,2,3,4,5,6,7,8,9,10};
+	sz=sizeof(arr)/sizeof(arr[0]);
+    printf("请输入一个数\n");
+	scanf("%d",&a);
+	ret=search(arr,a,sz);
+	if(ret==-1)
+	   printf("找不到这个数\n");
+	else
+	   printf("找到了，下标为%d",ret);
+    return 0;
+}
+int search(int arr[],int a,int sz) {
+	int left=0;
+	int right=sz-1;
+	while(left<=right) {
+		int mid=(left+right)/2;
+		if(arr[mid]<a)
+		   left=mid+1;
+		else if(arr[mid]>a)
+		   right=mid-1;
+		else
+		   return mid;
+	}
+	return -1;
+}
