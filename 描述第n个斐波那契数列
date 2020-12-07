@@ -13,3 +13,25 @@ int main()
 	printf("%d",ret);
 	return 0;
 }
+//-------------------------------------------------------递归求斐波那契数列很麻烦，相同运算次数很多，建议运用循环
+#include<stdio.h>
+int Fib(int n) {
+    int a=1;
+    int b=1;
+    int c=1;
+    while(n>2) {
+    	c=a+b;
+    	a=b;
+    	b=c;
+    	n--;
+    }
+    return c;
+}
+int main()
+{
+	int i,ret;
+	scanf("%d",&i);
+	ret=Fib(i);  //1,1,2,3,5,8,13,21~~~~~
+	printf("%d",ret);
+	return 0;
+}
