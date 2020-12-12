@@ -2,13 +2,17 @@
 void cor (int arr[],int number) {
 	int i,j,tmp;
 	for(i=0;i<number-1;i++) {
+		int flag=1;
 		for(j=0;j<number-1-i;j++) {
 			if(arr[j]>arr[j+1]) {
 				int tmp=arr[j];
 			    arr[j]=arr[j+1];
 			    arr[j+1]=tmp;
+			    flag=0;
 			}
 		}
+		if(flag==1)
+		break;
 	}
 }
 int main() {
