@@ -1,0 +1,23 @@
+#include <stdio.h>
+void cor (int arr[],int number) {
+	int i,j,tmp;
+	for(i=0;i<number-1;i++) {
+		for(j=0;j<number-1-i;j++) {
+			if(arr[j]>arr[j+1]) {
+				int tmp=arr[j];
+			    arr[j]=arr[j+1];
+			    arr[j+1]=tmp;
+			}
+		}
+	}
+}
+int main() {
+	int m=1;
+	int arr[10]={2,8,9,3,4,6,7,1,5,0};
+	int number=sizeof(arr)/sizeof(arr[0]);
+	cor(arr,number);
+	for(m=0;m<10;m++) {
+		printf("%d",arr[m]);
+	}
+	return 0;
+}
