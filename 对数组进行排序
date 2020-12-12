@@ -12,7 +12,7 @@ void cor (int arr[],int number) {
 			}
 		}
 		if(flag==1)
-		break;
+		break;                            //此break是退出for语句（break只能跳出for和switch）
 	}
 }
 int main() {
