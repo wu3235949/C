@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>//函数法
 void swap(int* pa,int* pb);
 int main() {
 	int a,b;
@@ -14,7 +14,7 @@ void swap(int* pa,int* pb) {
 	*pb=mid;
 }
 //------------------------------------------------------
-#include <stdio.h>
+#include <stdio.h>//异或法
 int main()
 {
  int a,b;
@@ -23,11 +23,11 @@ int main()
  a=a^b;
  b=a^b;
  a=a^b;
- printf("a=%d,b=%d",a,b);//优点：不会溢出
+ printf("a=%d,b=%d",a,b);//优点：不会溢出；缺点：效率低，可读性差
  return 0；
  }
 //-----------------------------------------------------
-#include <stdio.h>
+#include <stdio.h>//加减法
 int main()
 {
  int a,b;
@@ -37,5 +37,18 @@ int main()
  b=a-b;
  a=a-b;
  printf("a=%d,b=%d",a,b);//可能溢出
+ return 0；
+ }
+ //-----------------------------------------------------
+#include <stdio.h>
+int main()
+{
+ int a,b，tmp;
+ a=3;
+ b=5;
+ tmp=a;
+ a=b;
+ b=tmp;
+ printf("a=%d,b=%d",a,b);//优点：效率高
  return 0；
  }
