@@ -26,3 +26,16 @@ int main()
  printf("a=%d,b=%d",a,b);//优点：不会溢出
  return 0；
  }
+//-----------------------------------------------------
+#include <stdio.h>
+int main()
+{
+ int a,b;
+ a=3;
+ b=5;
+ a=a+b;
+ b=a-b;
+ a=a-b;
+ printf("a=%d,b=%d",a,b);//可能溢出
+ return 0；
+ }
