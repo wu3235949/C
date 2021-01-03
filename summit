@@ -31,3 +31,18 @@ int main()
 	return 0;
 }
 //---------------------------------------------------
+struct stu                                                       //结构体struct
+{
+	char name[20];
+	int age;
+	char id[20]; 
+} ;
+#include <stdio.h>
+int main()
+{
+    struct stu s1 = {"张三",20,"201800250"};;
+    printf("s1 name=%s\n",s1.name);
+        printf("s1 age=%d\n",s1.age);
+            printf("s1 id=%s\n",s1.id);
+	return 0;
+}
