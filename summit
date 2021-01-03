@@ -32,7 +32,7 @@ int main()
 }
 //---------------------------------------------------
 struct stu                                                       //结构体struct
-{
+{              //成员变量
 	char name[20];
 	int age;
 	char id[20]; 
@@ -40,7 +40,10 @@ struct stu                                                       //结构体stru
 #include <stdio.h>
 int main()
 {
-    struct stu s1 = {"张三",20,"201800250"};;
+    struct stu s1 = {"张三",20,"201800250"};    //结构体变量.成员名
+        struct stu* ps=&s1;
+    printf("s1 name=%s\n",(*ps).name);
+       printf("s1 name=%s\n",ps->name);        //结构体指针->成员名
     printf("s1 name=%s\n",s1.name);
         printf("s1 age=%d\n",s1.age);
             printf("s1 id=%s\n",s1.id);
