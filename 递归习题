@@ -1,0 +1,71 @@
+//不允许创建临时变量，字符串逆序（递归实现）
+#include <stdio.h>
+int my_strlen(char* arr)
+{
+	int count=0;
+	char* start=arr;
+	char* end=arr;
+	while(*end!='\0')
+	{
+		end++;
+	}
+	return end-start;
+}
+void reverse_string(char* arr)
+{
+	char tem=arr[0];
+	int len=my_strlen(arr);
+	arr[0]=arr[len-1];
+	arr[len-1]='\0';
+	if(my_strlen(arr+1)>=2)
+	reverse_string(arr+1);
+	arr[len-1]=tem;
+}
+int main()
+{
+	char arr[]="abcdefg";
+	reverse_string(arr);
+	printf("%s\n",arr);
+	return 0;
+} 
+//-----------------------------------------------
+计算一个数的每位之和（递归实现）
+#include <stdio.h>
+int sum(a)
+{
+	if(a>9)
+	{
+		return sum(a/10)+a%10;
+	}
+	else
+	return a;
+}
+int main()
+{
+	unsigned int tmp=0;
+	scanf("%d",&tmp);
+	int ret=sum(tmp);
+	printf("%d",ret);
+	return 0;
+}
+//----------------------------------------------------------
+递归实现p的w次方
+#include <stdio.h>
+double pow(int p,int w)
+{
+	if(w<0)
+	return (1/(pow(p,-w)));
+	else if(w==0)
+	return 1;
+	else
+	return p*pow(p,w-1);
+}
+int main()
+{
+	int p=0;
+	int w=0;
+	scanf("%d%d",&p,&w);
+	double ret=pow(p,w);
+	printf("%lf",ret);
+	return 0;
+}
