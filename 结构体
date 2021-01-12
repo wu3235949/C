@@ -1,0 +1,33 @@
+#include <stdio.h>
+typedef struct stu 
+{
+	char name[20];
+	char sex[5];
+	short age;
+	char tel[11];
+}stu;
+
+void print1(stu tmp)
+{
+	printf("%s\n",tmp.name);
+	printf("%s\n",tmp.sex);
+	printf("%d\n",tmp.age);
+	printf("%s\n",tmp.tel);
+}
+void print2(stu* ps)
+{
+	printf("%s\n",ps->name);
+	printf("%s\n",ps->sex);
+	printf("%d\n",ps->age);
+	printf("%s\n",ps->tel);
+}
+int main()
+{
+	struct stu s1={"张三","男",18,"13217209086"};
+	stu s2={"李四","男",21,"12345678912"};
+	print1(s1);
+	print2(&s2); 
+	return 0;
+}
+//print2更好，传地址只有4各字节，print1还需开辟空间，若结构体较大，空间占用较为严重
+//------------------------------------------------------
